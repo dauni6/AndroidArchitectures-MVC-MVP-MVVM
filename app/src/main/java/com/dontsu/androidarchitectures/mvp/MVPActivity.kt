@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dontsu.androidarchitectures.R
-
+/**
+ * MVP(Model - View - Presenter)
+ * **/
 class MVPActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_m_v_p)
+        title = "MVP Activity"
     }
 
     companion object {
