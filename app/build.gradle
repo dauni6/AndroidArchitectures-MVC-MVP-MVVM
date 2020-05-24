@@ -23,10 +23,15 @@ android {
         }
     }
 
+    compileOptions {//이거 안 해주면 java.lang.BootstrapMethodError: Exception from call site #4 bootstrap method error 뜸
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 def retrofitVersion = "2.9.0"
-def rxJavaVersion = "3.0.0"
+def rxJavaVersion = "2.1.0"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -39,8 +44,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
-    implementation "io.reactivex.rxjava3:rxandroid:$rxJavaVersion"
-    implementation "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
